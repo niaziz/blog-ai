@@ -1,13 +1,28 @@
 import Link from "next/link";
 import React from "react";
 
-type TrendingPropsCardProps = {
+type TrendingCardProps = {
   className?: string;
 };
 
-// const TrendingCard = ({ className }: TrendingPropsCardProps) => {
-//   return <Link href={}></Link>;
-// };
+const TrendingCard = ({ className }: TrendingCardProps) => {
+  return (
+    <Link
+      className={`${className} sm:mt-0 mt-7 sm:h-auto block h-96 relative hover:opacity-70`}
+      //   href={`${process.env.NEXT_PUBLIC_URL}/post/${post?.id}`}
+      href="/"
+    >
+      <div className="z-0 relative w-full h-full bg-wh-500">Image</div>
+      <div className="absolute z-1 top-0 left-0 w-full h-full bg-gradient-gradual"></div>
+      <div className="absolute z-2 bottom-0 left-0 p-3">
+        <h4 className="inline-block px-5 py-1 font-semibold bg-accent-orange">
+          catergory
+        </h4>
+        <div className="text-wh-100 mt-2">Post Type</div>
+      </div>
+    </Link>
+  );
+};
 
 const Trending = () => {
   return (
@@ -38,10 +53,17 @@ const Trending = () => {
       {/* GRID */}
 
       <div className="sm:grid gap-5 grid-cols-4 grid-rows-2 sm:h-[600px] my-3">
-        <div className="col-span-2 row-span-2 bg-wh-500"></div>
-        <div className="col-span-2 row-span-1 bg-wh-500"></div>
-        <div className="col-span-1 row-span-1 bg-wh-500"></div>
-        <div className="col-span-1 row-span-1 bg-wh-500"></div>
+        <TrendingCard className="col-span-2 row-span-2 bg-wh-500"></TrendingCard>
+        <TrendingCard className="col-span-2 row-span-1 bg-wh-500"></TrendingCard>
+        <TrendingCard className="col-span-1 row-span-1 bg-wh-500"></TrendingCard>
+        <TrendingCard className="col-span-1 row-span-1 bg-wh-500"></TrendingCard>
+      </div>
+
+      <div className="text-sm">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+        repellat tenetur culpa cum vitae soluta reprehenderit, deserunt, enim
+        beatae praesentium libero tempore veritatis nemo dolorum nobis.
+        Recusandae modi labore sapiente?
       </div>
     </section>
   );
