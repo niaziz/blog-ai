@@ -1,16 +1,15 @@
 import Link from "next/link";
 import React from "react";
-Link;
 
 type TrendingPropsCardProps = {
   className?: string;
 };
 
-const TrendingCard = ({ className }: TrendingPropsCardProps) => {
-  return <Link></Link>;
-};
+// const TrendingCard = ({ className }: TrendingPropsCardProps) => {
+//   return <Link href={}></Link>;
+// };
 
-const Trending = (props: Props) => {
+const Trending = () => {
   return (
     <section className="pt-3 pb-10 ">
       <div className="flex items-center gap-3">
