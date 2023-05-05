@@ -2,6 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import SocialLinks from "./SocialLinks";
+import Banner from "public/assets/ad-1.jpg";
 
 type Props = {};
 
@@ -26,8 +27,13 @@ const Navbar = (props: Props) => {
           <h1 className="font-bold text-3xl md:5xl">BLOG OF THE FUTURE</h1>
           <p className="text-sm mt-3">Blog to warn about the danger of AI</p>
         </div>
-        <div className="basis-full relative w-auto h-32 bg-wh-500">
-          Image here
+        <div className="basis-full relative w-auto h-auto bg-wh-500">
+          <Image
+            className="object-cover overflow-hidden"
+            alt="tech"
+            src={Banner}
+            fill
+          />
         </div>
       </div>
       <hr className="border-1 mx-10 " />
