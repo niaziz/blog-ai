@@ -1,15 +1,20 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import Trending from "app/(home)/Trending";
 import Tech from "app/(home)/Tech";
 import Travel from "app/(home)/Travel";
 import Other from "app/(shared)/Other";
 import Subscribe from "./(shared)/Subscribe";
 import SideBar from "./(shared)/Sidebar";
+import { prisma } from "app/api/client";
 
-const inter = Inter({ subsets: ["latin"] });
+const getPost = async () => {
+  const posts = await prisma.post.findMany();
 
-export default function Home() {
+  return posts;
+};
+
+export default async function Home() {
+  const posts = await getPost();
+
   return (
     <main className="px-10 leading-7">
       <Trending />
