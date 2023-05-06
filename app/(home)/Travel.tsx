@@ -1,9 +1,11 @@
 import React from "react";
 import Card from "../(shared)/Card";
 
-type Props = {};
+type Props = {
+  travelPost: Array<any>;
+};
 
-const Travel = (props: Props) => {
+const Travel = ({ travelPost }: Props) => {
   return (
     <section className="mt-10">
       <hr className="border-1" />
@@ -15,9 +17,21 @@ const Travel = (props: Props) => {
       </div>
 
       <div className="sm:flex justify-between gap-8">
-        <Card className="bg-wh-500 mt-5 sm:mt-0 basis-1/3" imageHeight="h-80" />
-        <Card className="bg-wh-500 mt-5 sm:mt-0 basis-1/3" imageHeight="h-80" />
-        <Card className="bg-wh-500 mt-5 sm:mt-0 basis-1/3" imageHeight="h-80" />
+        <Card
+          className="bg-wh-500 mt-5 sm:mt-0 basis-1/3"
+          imageHeight="h-80"
+          post={travelPost[0]}
+        />
+        <Card
+          className="bg-wh-500 mt-5 sm:mt-0 basis-1/3"
+          imageHeight="h-80"
+          post={travelPost[1]}
+        />
+        <Card
+          className="bg-wh-500 mt-5 sm:mt-0 basis-1/3"
+          imageHeight="h-80"
+          post={travelPost[2]}
+        />
       </div>
       <Card
         className="bg-wh-500 flex justify-between items-center gap-3 mt-7 mb-5"
