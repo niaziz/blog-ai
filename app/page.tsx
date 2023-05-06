@@ -4,6 +4,7 @@ import Travel from "app/(home)/Travel";
 import Other from "app/(shared)/Other";
 import Subscribe from "./(shared)/Subscribe";
 import SideBar from "./(shared)/Sidebar";
+import { Post } from "@prisma/client";
 import { prisma } from "app/api/client";
 
 export const revalidate = 60;
@@ -28,12 +29,12 @@ export default async function Home() {
   const posts = await getPost();
 
   const formattedPosts = () => {
-    const trendingPost: Array<any> = [];
-    const techPost: Array<any> = [];
-    const travelPost: Array<any> = [];
-    const otherPost: Array<any> = [];
+    const trendingPost: Array<Post> = [];
+    const techPost: Array<Post> = [];
+    const travelPost: Array<Post> = [];
+    const otherPost: Array<Post> = [];
 
-    posts.forEach((post: any, i: number) => {
+    posts.forEach((post: Post, i: number) => {
       if (i < 4) {
         trendingPost.push(post);
       }

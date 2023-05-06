@@ -1,11 +1,12 @@
 import Link from "next/link";
 import React from "react";
 import Image from "next/image";
+import { Post } from "@prisma/client";
 
 type TrendingCardProps = {
   className?: string;
   src?: string;
-  post: any;
+  post: Post;
 };
 
 const TrendingCard = ({ post, className }: TrendingCardProps) => {
@@ -39,7 +40,7 @@ type Props = {
   trendingPost: Array<any>;
 };
 
-const Trending = ({ trendingPost }) => {
+const Trending = ({ trendingPost }: Props) => {
   return (
     <section className="pt-3 pb-10 ">
       <div className="flex items-center gap-3">

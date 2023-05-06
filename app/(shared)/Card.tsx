@@ -7,6 +7,7 @@ type Props = {
   imageHeight?: string;
   isSmallCard?: boolean;
   isLongForm?: boolean;
+  post: any;
 };
 
 const Card = ({
@@ -20,7 +21,7 @@ const Card = ({
   const date = new Date(createdAt);
 
   const options = { year: "numeric", month: "long", day: "numeric" };
-  const formattedDate = date.toLocaleDateString("en-US", options);
+  const formattedDate = date.toLocaleDateString("en-US");
 
   return (
     <div className={className}>
